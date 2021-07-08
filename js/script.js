@@ -28,25 +28,31 @@ submitButtonElement.addEventListener("click", function () {
     var price = kms * priceConstant;
     var fullPrice = price;
 
-    if (ageRange === "min") {
-        price *= .8;
-        offer = "Offerta Junior (-20%)"
-        fullPriceDisplayElement.classList.remove("invisible");
-    }
-    if (ageRange === "over65") {
-        price *= .6;
-        offer = "Offerta Senior (-40%)"
-        fullPriceDisplayElement.classList.remove("invisible");
-    }
+    if (allLetterName(userName) && allLetterSurname(surname) && minKm(kms)) {
+        if (ageRange === "min") {
+            price *= .8;
+            offer = "Offerta Junior (-20%)"
+            fullPriceDisplayElement.classList.remove("invisible");
+        }
+        if (ageRange === "over65") {
+            price *= .6;
+            offer = "Offerta Senior (-40%)"
+            fullPriceDisplayElement.classList.remove("invisible");
+        }
 
-    nameDisplayElement.innerHTML = userName + " " + surname;
-    carriageDisplayElement.innerHTML = carriage;
-    trainCodeDisplayElement.innerHTML = "#" + trainCode;
-    offerDisplayElement.innerHTML = offer;
-    priceDisplayElement.innerHTML = price.toFixed(2) + "€";
-    fullPriceDisplayElement.innerHTML = fullPrice.toFixed(2) + "€";
+        nameDisplayElement.innerHTML = userName + " " + surname;
+        carriageDisplayElement.innerHTML = carriage;
+        trainCodeDisplayElement.innerHTML = "#" + trainCode;
+        offerDisplayElement.innerHTML = offer;
+        priceDisplayElement.innerHTML = price.toFixed(2) + "€";
+        fullPriceDisplayElement.innerHTML = fullPrice.toFixed(2) + "€";
 
-    yourTicketSection.classList.remove("invisible");
+        yourTicketSection.classList.remove("invisible");
+
+        nameElement.value = "";
+        surnameElement.value = "";
+        ageRangeElement.value = "mag";
+    }
 })
 
 resetButtonElement.addEventListener("click", function () {
@@ -54,5 +60,40 @@ resetButtonElement.addEventListener("click", function () {
     surnameElement.value = "";
     kmsElement.value = "10";
     ageRangeElement.value = "mag";
+
+    fullPriceDisplayElement.classList.add("invisible");
     yourTicketSection.classList.add("invisible");
 })
+
+/* Funzioni per controllare che nelle stringhe
+siano presenti solo lettere e spazi */
+function allLetterSurname(inputTxt) {
+    var letters = /^[a-zA-Z\s]+$/;
+    if (inputTxt.match(letters)) {
+        return true;
+    }
+    else {
+        alert("Inserisci un cognome valido (senza numeri e caratteri speciali)");
+        return false;
+    }
+}
+function allLetterName(inputTxt) {
+    var letters = /^[a-zA-Z\s]+$/;
+    if (inputTxt.match(letters)) {
+        return true;
+    }
+    else {
+        alert("Inserisci un nome valido (senza numeri e caratteri speciali)");
+        return false;
+    }
+}
+/* Funzioni per controllare il numero di km */
+function minKm(km) {
+    if (km < 10) {
+        alert("Il minimo di km percorribili è 10");
+        return false;
+    }
+    else {
+        return true;
+    }
+}

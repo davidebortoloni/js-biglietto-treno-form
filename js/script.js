@@ -32,11 +32,13 @@ submitButtonElement.addEventListener("click", function () {
         if (ageRange === "min") {
             price *= .8;
             offer = "Offerta Junior (-20%)"
+            fullPriceDisplayElement.classList.add("d-inline");
             fullPriceDisplayElement.classList.remove("invisible");
         }
         if (ageRange === "over65") {
             price *= .6;
             offer = "Offerta Senior (-40%)"
+            fullPriceDisplayElement.classList.add("d-inline");
             fullPriceDisplayElement.classList.remove("invisible");
         }
 
@@ -61,7 +63,7 @@ resetButtonElement.addEventListener("click", function () {
     kmsElement.value = "10";
     ageRangeElement.value = "mag";
 
-    fullPriceDisplayElement.classList.add("invisible");
+    fullPriceDisplayElement.classList.remove("d-inline");
     yourTicketSection.classList.add("invisible");
 })
 

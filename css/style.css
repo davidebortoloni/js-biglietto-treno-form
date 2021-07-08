@@ -1,9 +1,11 @@
 .bg-green {
     background-color: #0CD977;
 }
-.text-white,
 .btn.bg-green {
     color: white;
+}
+.text-blue {
+    color: #001533;
 }
 section {
     background-color: white;

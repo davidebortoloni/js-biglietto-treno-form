@@ -1,0 +1,17 @@
+.bg-green {
+    background-color: #0CD977;
+}
+.text-white,
+.btn.bg-green {
+    color: white;
+}
+section {
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}

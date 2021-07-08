@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'
+        integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=='
+        crossorigin='anonymous' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css'
+        integrity='sha512-usVBAd66/NpVNfBge19gws2j6JZinnca12rAe2l+d+QkLU9fiG02O1X8Q6hepIpr/EYKZvKx/I9WsnujJuOmBA=='
+        crossorigin='anonymous' />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Prenotazione tickek</title>
+</head>
+
+<body class="bg-green">
+    <div class="container text-center">
+        <h1 class="my-4 text-white">Boolean Train</h1>
+        <section id="entering-information" class="p-5 mb-5">
+            <h2 class="mb-3">Calcola il prezzo del tuo biglietto</h2>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-3 p-4">
+                    <div class="input-field">
+                        <label for="name">Nome</label>
+                        <input class="w-100" type="text" id="name">
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 p-4">
+                    <div class="input-field">
+                        <label for="surname">Cognome</label>
+                        <input class="w-100" type="text" id="surname">
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 p-4">
+                    <div class="input-field">
+                        <label for="kms">Km da percorrere</label>
+                        <input id="kms" type="number" class="w-100" min="10" step="5" value="10">
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 p-4">
+                    <div class="input-field">
+                        <label for="age-range">Fascia d'età</label>
+                        <select class="w-100" id="age-range">
+                            <option value="min">Minorenne</option>
+                            <option value="mag" selected>Maggiorenne</option>
+                            <option value="over65">Over65</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3 p-4">
+                    <button id="submit-button" class="btn w-100 bg-green rounded-pill">Genera biglietto</button>
+                </div>
+                <div class="col-md-3 p-4">
+                    <button id="reset-button" class="btn w-100 bg-green rounded-pill">Reset</button>
+                </div>
+            </div>
+        </section>
+        <section id="your-ticket" class="invisible p-5">
+            <h2 class="mb-3">Il tuo biglietto</h2>
+            <div class="row">
+                <div class="col-12 col-md-4 p-4">
+                    <div class="display-field">
+                        <label for="name-display">Nome del passeggero</label>
+                        <div id="name-display" class="text-capitalize"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 p-4">
+                    <div class="display-field">
+                        <label for="carriage-display">Numero della carrozza</label>
+                        <div id="carriage-display"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 p-4">
+                    <div class="display-field">
+                        <label for="train-code">Codice del treno</label>
+                        <div id="train-code"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 p-4">
+                    <div class="display-field">
+                        <label for="offer-display">Sconto speciale</label>
+                        <div id="offer-display"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 p-4">
+                    <div class="display-field">
+                        <label for="price-display">Prezzo del biglietto</label>
+                        <div id="price-display"></div>
+                        <div id="full-price-display" class="text-decoration-line-through invisible"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

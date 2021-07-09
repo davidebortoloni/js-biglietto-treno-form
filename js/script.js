@@ -33,13 +33,13 @@ submitButtonElement.addEventListener("click", function () {
             price *= .8;
             offer = "Offerta Junior (-20%)"
             fullPriceDisplayElement.classList.add("d-inline");
-            fullPriceDisplayElement.classList.remove("invisible");
+            fullPriceDisplayElement.classList.remove("d-none");
         }
         if (ageRange === "over65") {
             price *= .6;
             offer = "Offerta Senior (-40%)"
             fullPriceDisplayElement.classList.add("d-inline");
-            fullPriceDisplayElement.classList.remove("invisible");
+            fullPriceDisplayElement.classList.remove("d-none");
         }
 
         nameDisplayElement.innerHTML = userName + " " + surname;
@@ -49,7 +49,7 @@ submitButtonElement.addEventListener("click", function () {
         priceDisplayElement.innerHTML = price.toFixed(2) + "€";
         fullPriceDisplayElement.innerHTML = fullPrice.toFixed(2) + "€";
 
-        yourTicketSection.classList.remove("invisible");
+        yourTicketSection.classList.remove("d-none");
 
         nameElement.value = "";
         surnameElement.value = "";
@@ -63,8 +63,9 @@ resetButtonElement.addEventListener("click", function () {
     kmsElement.value = "10";
     ageRangeElement.value = "mag";
 
+    fullPriceDisplayElement.classList.add("d-none");
     fullPriceDisplayElement.classList.remove("d-inline");
-    yourTicketSection.classList.add("invisible");
+    yourTicketSection.classList.add("d-none");
 })
 
 /* Funzioni per controllare che nelle stringhe

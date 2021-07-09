@@ -23,7 +23,7 @@ submitButtonElement.addEventListener("click", function () {
     var kms = kmsElement.value;
     var ageRange = ageRangeElement.value;
     var carriage = Math.floor(Math.random() * 12) + 1;
-    var trainCode = Math.floor(Math.random() * 99999) + 1
+    var trainCode = Math.floor(Math.random() * 10000) + 90000;
     var offer = "Tariffa ordinaria";
     var price = kms * priceConstant;
     var fullPrice = price;
